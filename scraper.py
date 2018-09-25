@@ -1,5 +1,4 @@
 import scraperwiki
-import lxml.html
 
 import requests
 from bs4 import BeautifulSoup
