@@ -22,7 +22,8 @@ tr = soup.find_all("tr", class_="")
 for row in tr[1:]:
     td = row.find_all("td")
     ctrlPt_data = {
-        'date_control_point': "{}-{}".format(ytd.strftime("%Y-%m-%d"),td[0].text),
+        'date': ytd.strftime("%Y-%m-%d"),
+        'control_point': td[0].text,
         'arrival_Hong_Kong_Residents': int(td[1].text.replace(',','')),
         'arrival_Mainland_Visitors': int(td[2].text.replace(',','')),
         'arrival_Other_Visitors': int(td[3].text.replace(',','')),
@@ -34,4 +35,4 @@ for row in tr[1:]:
     }
     print(ctrlPt_data)
 print(ytdYmd)
-scraperwiki.sqlite.save(unique_keys=['date_control_point'], data=ctrlPt_data)
+scraperwiki.sqlite.save(unique_keys=['date', 'control_point'], data=ctrlPt_data)
