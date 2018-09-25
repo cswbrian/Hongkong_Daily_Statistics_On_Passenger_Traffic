@@ -1,4 +1,4 @@
-# import scraperwiki
+import scraperwiki
 
 import requests
 from bs4 import BeautifulSoup
