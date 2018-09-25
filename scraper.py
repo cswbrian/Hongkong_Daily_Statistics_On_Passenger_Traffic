@@ -33,6 +33,6 @@ for row in tr[1:]:
         'departure_Other_Visitors': int(td[7].text.replace(',','')),
         'departure_Total': int(td[8].text.replace(',',''))
     }
+    scraperwiki.sqlite.save(unique_keys=['date', 'control_point'], data=ctrlPt_data)
     print(ctrlPt_data)
 print(ytdYmd)
-scraperwiki.sqlite.save(unique_keys=['date', 'control_point'], data=ctrlPt_data)
