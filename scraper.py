@@ -11,7 +11,7 @@ import pytz
 
 # Get Date
 hkt = pytz.timezone('Asia/Hong_Kong')
-ytd = datetime.now().replace(tzinfo=hkt)-timedelta(days=2)
+ytd = datetime.now().replace(tzinfo=hkt)-timedelta(days=1)
 ytdYmd = ytd.strftime("%Y%m%d")
 
 
