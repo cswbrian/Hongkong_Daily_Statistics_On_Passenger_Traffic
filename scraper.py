@@ -39,7 +39,11 @@ ytdYmd = ytd.strftime("%Y%m%d")
 #         print(ctrlPt_data)
 # print(ytdYmd)
 
-
+hkt = pytz.timezone('Asia/Hong_Kong')
+fmt = '%Y-%m-%d %H:%M:%S %Z%z'
+loc_dt = hkt.localize(datetime.now())
+print(loc_dt)
+print(loc_dt-timedelta(days=1))
 print(hkt)
 print(datetime.now().replace(tzinfo=hkt)-timedelta(days=1))
 print(datetime.now().replace(tzinfo=hkt)-timedelta(days=2))
