@@ -13,8 +13,9 @@ import pytz
 hkt = pytz.timezone('Asia/Hong_Kong')
 
 loc_dt = hkt.localize(datetime.now())
-ytdYmd = loc_dt.strftime("%Y%m%d") + timedelta(hours=8)-timedelta(days=2)
+ytdYmd = loc_dt + timedelta(hours=8)-timedelta(days=2)
 print(ytdYmd)
+print(ytdYmd.strftime("%Y%m%d"))
 
 
 # # Scrape Page
