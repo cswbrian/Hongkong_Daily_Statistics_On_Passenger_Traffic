@@ -11,8 +11,10 @@ import pytz
 
 # Get Date
 hkt = pytz.timezone('Asia/Hong_Kong')
-ytd = datetime.now().replace(tzinfo=hkt)-timedelta(days=1)
-ytdYmd = ytd.strftime("%Y%m%d")
+
+loc_dt = hkt.localize(datetime.now())
+ytdYmd = loc_dt.strftime("%Y%m%d") + timedelta(hours=8)-timedelta(days=2)
+print(ytdYmd)
 
 
 # # Scrape Page
@@ -39,15 +41,4 @@ ytdYmd = ytd.strftime("%Y%m%d")
 #         print(ctrlPt_data)
 # print(ytdYmd)
 
-hkt = pytz.timezone('Asia/Hong_Kong')
 
-fmt = '%Y-%m-%d %H:%M:%S %Z%z'
-loc_dt = hkt.localize(datetime.now())
-print(loc_dt.strftime(fmt))
-print(loc_dt + timedelta(hours=8))
-
-
-print(loc_dt-timedelta(days=1))
-print(hkt)
-print(datetime.now().replace(tzinfo=hkt)-timedelta(days=1))
-print(datetime.now().replace(tzinfo=hkt)-timedelta(days=2))
