@@ -10,16 +10,11 @@ import pytz
 
 
 # Get Date
-hkt = pytz.timezone('Asia/Hong_Kong')
-
-loc_dt = hkt.localize(datetime.now())
-ytdYmd = loc_dt + timedelta(hours=8)-timedelta(days=2)
-print(ytdYmd)
-print(ytdYmd.strftime("%Y%m%d"))
+twoDayAgo = datetime.now() + timedelta(hours=8)-timedelta(days=2)
 
 
-# # Scrape Page
-# r = requests.get("https://www.immd.gov.hk/eng/stat_{}.html".format(ytdYmd))
+# Scrape Page
+# r = requests.get("https://www.immd.gov.hk/eng/stat_{}.html".format(twoDayAgo.strftime("%Y%m%d")))
 # soup = BeautifulSoup(r.text, "html.parser")
 # tr = soup.find_all("tr")
 # for row in tr:
@@ -40,6 +35,5 @@ print(ytdYmd.strftime("%Y%m%d"))
 #         }
 #         scraperwiki.sqlite.save(unique_keys=['date', 'control_point'], data=ctrlPt_data)
 #         print(ctrlPt_data)
-# print(ytdYmd)
 
-
+print(twoDayAgo.strftime("%Y%m%d"))
