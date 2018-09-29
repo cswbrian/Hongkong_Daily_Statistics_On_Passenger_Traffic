@@ -13,7 +13,8 @@ import pytz
 twoDayAgo = datetime.now() + timedelta(hours=8)-timedelta(days=2)
 
 # Scrape Page
-r = requests.get("https://www.immd.gov.hk/eng/stat_{}.html".format(twoDayAgo.strftime("%Y%m%d")))
+# r = requests.get("https://www.immd.gov.hk/eng/stat_{}.html".format(twoDayAgo.strftime("%Y%m%d")))
+r = requests.get("https://www.immd.gov.hk/eng/stat_20180925.html")
 soup = BeautifulSoup(r.text, "html.parser")
 tr = soup.find_all("tr")
 for row in tr:
