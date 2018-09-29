@@ -36,4 +36,4 @@ for row in tr:
         scraperwiki.sqlite.save(unique_keys=['date', 'control_point'], data=ctrlPt_data)
         print(ctrlPt_data)
 
-print(twoDayAgo.strftime("%Y%m%d"))
+#print(twoDayAgo.strftime("%Y%m%d"))
