@@ -21,7 +21,7 @@ for row in tr:
     if cp:
         td = row.find_all("td", class_ ="hRight")
         ctrlPt_data = {
-            'date': ytd.strftime("%Y-%m-%d"),
+            'date': twoDayAgo.strftime("%Y-%m-%d"),
             'control_point': cp.text,
             'arrival_Hong_Kong_Residents': int(td[0].text.replace(',','')),
             'arrival_Mainland_Visitors': int(td[1].text.replace(',','')),
