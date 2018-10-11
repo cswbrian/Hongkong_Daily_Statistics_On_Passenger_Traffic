@@ -9,8 +9,8 @@ from datetime import timedelta
 import pytz
 
 
-date = "20181005"
-date1 = "2018-10-05"
+date = "20180928"
+date1 = "2018-09-28"
 
 # Get Date
 twoDayAgo = datetime.now() + timedelta(hours=8)-timedelta(days=2)
